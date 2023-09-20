@@ -264,7 +264,7 @@ html, body {
 .hover-underline-animation {
     display: inline-block;
     position: relative;
-    color: #0087ca;
+    /* color: #0087ca; */
   }
   
   .hover-underline-animation::after {
@@ -275,7 +275,7 @@ html, body {
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: white;
+    background-color: red;
     opacity: 0.6;
     transform-origin: bottom right;
     transition: transform 0.25s ease-out;
