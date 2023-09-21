@@ -5,6 +5,17 @@ const scroll = new LocomotiveScroll({
   smooth: true,
 });
 
+function animateBoundingElem() {
+  let elm = document.querySelector('.boundingelem1');
+  gsap.from(elm, { y: -200 });
+
+  elm = document.querySelector('#secondh1');
+  gsap.from(elm, { x: -200 });
+
+  elm = document.querySelector('#t1');
+  gsap.from(elm, { x: 200 });
+}
+
 function firstPageAnim() {
   var tl = gsap.timeline();
 
@@ -64,7 +75,7 @@ function circleMouseFollower(xscale, yscale) {
     ).style.transform = `translate(${dets.clientX}px, ${dets.clientY}px) scale(${xscale}, ${yscale})`;
   });
 }
-
+animateBoundingElem();
 circleChaptaKaro();
 circleMouseFollower();
 // firstPageAnim();
@@ -87,12 +98,18 @@ document.querySelectorAll('.elem').forEach(function (elem) {
     var diff = dets.clientY - elem.getBoundingClientRect().top;
     diffrot = dets.clientX - rotate;
     rotate = dets.clientX;
+    // console.log(
+    //   `diffrot: ${diffrot}, rotate: ${rotate}, half-diffrot: ${
+    //     diffrot * 0.5
+    //   }*0.5`
+    // );
     gsap.to(elem.querySelector('img'), {
       opacity: 1,
       ease: Power3,
       top: diff,
       left: dets.clientX,
-      rotate: gsap.utils.clamp(-20, 20, diffrot * 0.5),
+      rotate: gsap.utils.clamp(-20, 20, diffrot),
+      // rotate: '15deg',
     });
   });
 });

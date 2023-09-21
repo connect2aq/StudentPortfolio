@@ -10,10 +10,16 @@ html, body {
     height: 100%;
 }
 
+.box{
+    width: 20px;
+    height: 20px;
+    background-color: green;
+}
 #minicircle {
     transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s;
-    width: 10px;
-    height: 10px;
+    /* transition: all cubic-bezier(1,.06,.43,1.09) 1s; */
+    width: 12px;
+    height: 12px;
     position: absolute;
     z-index: 99999;
     border-radius: 50%;
@@ -26,8 +32,8 @@ html, body {
 }
 
 .bounding .boundingelem {
-    /* transform: translateY(100%); */
-    /* transform: translateY(100%); */
+    /* transform: translateY(100%); 
+     transform: translateY(100%); */
     color: white;
     opacity: 0.6;
 }
